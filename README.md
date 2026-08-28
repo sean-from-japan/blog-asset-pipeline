@@ -54,8 +54,8 @@ files:
 flowchart TD
     A["Article<br/>saved HTML or Markdown draft"] --> B[extract headings]
     B --> C{"body heading?"}
-    C -- "navigation, contents,<br/>footer, post-summary blocks" --> X["excluded list<br/>reported for review"]
-    C -- yes --> D[build delivery plan]
+    C -->|"navigation, contents,<br/>footer, post-summary blocks"| X["excluded list<br/>reported for review"]
+    C -->|yes| D[build delivery plan]
     P["delivery profile<br/>sizes and naming limits"] --> D
     D --> E["ledger.md<br/>checklist and contract"]
     D --> F["plan.json<br/>machine-readable"]
@@ -63,8 +63,8 @@ flowchart TD
     G --> H[check delivery]
     E --> H
     H --> I{"all rules pass?"}
-    I -- no --> J["numbered list of problems<br/>exit code 1"]
-    I -- yes --> K[zip the folder]
+    I -->|no| J["numbered list of problems<br/>exit code 1"]
+    I -->|yes| K[zip the folder]
     K --> L[check-archive]
     L --> M["deliverable"]
 ```
