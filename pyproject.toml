@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blog-asset-pipeline"
+version = "0.1.0"
+description = "Plan, validate and package the image set that ships with an article."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "sean-from-japan" }]
+keywords = ["cms", "workflow", "validation", "cli"]
+classifiers = [
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Topic :: Utilities",
+]
+dependencies = []
+
+[project.scripts]
+blog-assets = "blog_asset_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "RUF"]
+# E501: line length is enforced by the formatter, not twice.
+# RUF001: full-width punctuation is data this tool exists to handle correctly,
+#         so flagging it as an ambiguous character is a false positive here.
+ignore = ["E501", "RUF001"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
