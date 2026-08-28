@@ -83,6 +83,7 @@ Requires Python 3.9 or newer. No runtime dependencies.
 git clone https://github.com/sean-from-japan/blog-asset-pipeline.git
 cd blog-asset-pipeline
 python -m venv .venv && source .venv/bin/activate
+pip install --upgrade pip     # editable installs need pip 21.3 or newer
 pip install -e .
 pip install -r requirements-dev.txt   # only needed to run the tests
 ```
