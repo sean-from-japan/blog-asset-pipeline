@@ -1,0 +1,8 @@
+{
+  "name": "wide-format",
+  "header": "1920x1080",
+  "body": "1200x900",
+  "square": "1080x1080",
+  "max_filename_bytes": 60,
+  "max_slug_chars": 60
+}
