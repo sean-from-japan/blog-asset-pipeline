@@ -1,5 +1,7 @@
 # blog-asset-pipeline
 
+**English** | [日本語概要](README.ja.md)
+
 A command line tool that reads an article, works out exactly which images it
 needs, and refuses to let an incomplete or malformed image package be
 delivered.
